@@ -35,4 +35,15 @@ public class StepsTest extends TestBase {
             $("#issues-tab").shouldBe(Condition.visible);
         });
     }
+
+    @Test
+    public void testAnnotatedStep() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
+        WebSteps steps = new WebSteps();
+
+        steps.openMainPage();
+        steps.searchForRepository(REPOSITORY);
+        steps.clickOnRepositoryLink(REPOSITORY);
+        steps.shouldSeeTabIssue();
+    }
 }
