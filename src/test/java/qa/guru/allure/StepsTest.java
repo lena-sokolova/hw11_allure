@@ -44,6 +44,6 @@ public class StepsTest extends TestBase {
         steps.openMainPage();
         steps.searchForRepository(REPOSITORY);
         steps.clickOnRepositoryLink(REPOSITORY);
-        steps.shouldSeeTabIssue();
+        steps.shouldSeeTabIssue(REPOSITORY);
     }
 }

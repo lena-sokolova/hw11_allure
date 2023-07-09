@@ -28,7 +28,7 @@ public class WebSteps {
     }
 
     @Step("Проверяем наличие таба Issue в {repo}")
-    public void shouldSeeTabIssue() {
+    public void shouldSeeTabIssue(String repo) {
         $("#issues-tab").shouldBe(Condition.visible);
     }
 }
