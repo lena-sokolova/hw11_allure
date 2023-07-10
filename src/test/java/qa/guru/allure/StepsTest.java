@@ -16,7 +16,7 @@ public class StepsTest extends TestBase {
 
     private static final String REPOSITORY = "eroshenkoam/allure-example";
     private static final int ISSUE = 81;
-    private static final String ISSUENAME = "issue_to_test_allure_report";
+    private static final String ISSUE_NAME = "issue_to_test_allure_report";
 
     @Test
     public void testLambdaStep() {
@@ -36,8 +36,8 @@ public class StepsTest extends TestBase {
         step("Открываем таб Issues", () -> {
             $("#issues-tab").click();
         });
-        step("Проверяем наличие Issue с номером " + ISSUE + ", именем " + ISSUENAME, () -> {
-            $("#issue_" + ISSUE + "_link").shouldHave(text(ISSUENAME));
+        step("Проверяем наличие Issue с номером " + ISSUE + ", именем " + ISSUE_NAME, () -> {
+            $("#issue_" + ISSUE + "_link").shouldHave(text(ISSUE_NAME));
         });
     }
 
@@ -50,6 +50,6 @@ public class StepsTest extends TestBase {
         steps.searchForRepository(REPOSITORY);
         steps.clickOnRepositoryLink(REPOSITORY);
         steps.openIssuesTab();
-        steps.shouldSeeIssueWithNumberAndName(ISSUE, ISSUENAME);
+        steps.shouldSeeIssueWithNumberAndName(ISSUE, ISSUE_NAME);
     }
 }
